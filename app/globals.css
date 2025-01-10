@@ -193,3 +193,10 @@ ul {
   text-align: center;
   margin-top: 3rem;
 }
+
+
+.header {
+  width: 90%;
+  max-width: 60rem;
+  margin: 2rem auto;
+}
