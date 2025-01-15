@@ -1,13 +1,15 @@
 import { DUMMY_NEWS } from "@/dummy-news";
+import { getNewsItem } from "@/lib/news";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
 
-export default function NewsDetailPage({params}) {
+export default async function NewsDetailPage({params}) {
 
-    const newslug = params.slug;
+    const newsSlug = params.slug;
 
-    const newsItem = DUMMY_NEWS.find(newsItem => newsItem.slug === newslug);
+    // const newsItem = DUMMY_NEWS.find(newsItem => newsItem.slug === newslug);
+    const newsItem = await getNewsItem(newsSlug)
 
     // if no arcticle was found, tell nextjs to use not found error
     // instead of should another kind of error
